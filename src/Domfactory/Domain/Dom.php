@@ -72,7 +72,7 @@ class Dom
      */
     public function load($source)
     {
-        $source = mb_convert_encoding($source, 'HTML-ENTITIES', mb_detect_encoding($source));
+        $source = @mb_convert_encoding($source, 'HTML-ENTITIES', mb_detect_encoding($source));
         $dom    = new DOMDocument();
 
         // Try to load the source as standard XML document first, then as HTML document
